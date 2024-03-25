@@ -8,6 +8,7 @@
   flex-direction: column;
   align-content: flex-end;
   width: 100%;
+  padding: 0.5em 0.5em;
 }
 
 form {
@@ -20,4 +21,5 @@ form div {
   justify-content: space-between;
   border-top: solid black 2px;
   padding: 0.5em 0;
+  font-family: 'Bungee', sans-serif;
 }
