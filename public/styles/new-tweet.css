@@ -1,0 +1,23 @@
+#tweet-text {
+  border: none;
+  background-color: inherit;
+}
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  width: 100%;
+}
+
+form {
+  display: inherit;
+  flex-direction: inherit;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  border-top: solid black 2px;
+  padding: 0.5em 0;
+}

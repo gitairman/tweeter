@@ -28,8 +28,10 @@ body {
  */
 
 main {
+  border: solid black 1px;
   width: 90%;
   margin: auto;
   display: flex;
   justify-content: center;
+  background-color: inherit;
 }
