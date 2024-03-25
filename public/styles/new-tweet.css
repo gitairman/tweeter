@@ -9,6 +9,7 @@
   align-content: flex-end;
   width: 100%;
   padding: 0.5em 0.5em;
+  margin-bottom: 1em;
 }
 
 form {
@@ -16,10 +17,19 @@ form {
   flex-direction: inherit;
 }
 
-form div {
+form button {
+  background-color: #4056a1;
+  color: #ffffff;
+}
+
+footer {
   display: flex;
   justify-content: space-between;
   border-top: solid black 2px;
   padding: 0.5em 0;
   font-family: 'Bungee', sans-serif;
+}
+
+.char-limit {
+  color: red;
 }

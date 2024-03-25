@@ -3,10 +3,9 @@ const handleInput = function () {
   const charLeft = 140 - charLen;
   const counter = $(this).siblings().find('.counter');
 
-  $(counter).val(charLeft);
-  if (charLeft < 0) {
-    $(counter).css('color', 'red');
-  } else $(counter).css('color', 'inherit');
+  $(counter).text(charLeft);
+  if (charLeft < 0) $(counter).addClass('char-limit');
+  else $(counter).removeClass('char-limit');
 };
 
 $(document).ready(function () {

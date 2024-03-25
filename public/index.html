@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -64,12 +65,35 @@
         <form method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div>
+          <footer>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
+          </footer>
         </form>
       </section>
+      <article class="tweet">
+        <header>
+          <div class="tweet_author">
+            <i class="fa-regular fa-face-smile"></i>
+            <span>Aaron</span>
+          </div>
+          <span class="handle"> @airman </span>
+        </header>
+        <div>
+          <p>
+            Life is like a box of chocolates, you never know what you're gonna
+            get.
+          </p>
+        </div>
+        <footer>
+          <date>10 days ago</date>
+          <div class="icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>
