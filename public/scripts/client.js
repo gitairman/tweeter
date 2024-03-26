@@ -71,7 +71,8 @@ const handleSubmit = function (e) {
     data,
   })
     .done(function (res) {
-      renderTweets([res]);
+      $('#tweets-container').empty();
+      loadTweets();
       e.target.reset();
       $(e.target).find('.counter').val(140);
     })
