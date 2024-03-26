@@ -4,6 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const xssSafe = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = (tweetData) => {
   const {
     user: { name, avatars, handle },
@@ -20,7 +26,7 @@ const createTweetElement = (tweetData) => {
           <span class="handle"> ${handle} </span>
         </header>
         <section class="tweet_text">
-          <p>${text}</p>
+          <p>${xssSafe(text)}</p>
         </section>
         <footer>
           <time>${timeago.format(created_at)}</time>
