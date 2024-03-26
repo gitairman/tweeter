@@ -41,12 +41,13 @@ const renderTweets = (tweets) => {
 };
 
 const loadTweets = function () {
-  $.ajax({ method: 'GET', url: '/tweets' }).done(function (res) {
-    console.log(res);
-    renderTweets(res);
-  });
+  $.ajax({ method: 'GET', url: '/tweets' })
+    .done(function (res) {
+      console.log(res);
+      renderTweets(res);
+    })
+    .fail((err) => console.log(err));
 };
-loadTweets();
 
 const handlePost = function (data) {
   console.log(data);
@@ -54,19 +55,31 @@ const handlePost = function (data) {
 
 const handleSubmit = function (e) {
   e.preventDefault();
-  console.log(e);
-  console.log($(this).serialize());
+
   const data = $(this).serialize();
+  if (!data.slice(5)) return alert('Please type some text');
+  const charLeft = $(this).find('.counter').val();
+
+  if (charLeft < 0)
+    return alert(
+      `Message is currently ${
+        Math.abs(charLeft) + 140
+      } characters, but must be less than 140.`
+    );
+
   $.ajax({
     method: 'POST',
     url: '/tweets',
     data,
-  }).done(function (res) {
-    console.log(res);
-    renderTweets([res]);
-  });
+  })
+    .done(function (res) {
+      console.log(res);
+      renderTweets([res]);
+    })
+    .fail((err) => console.log(err));
 };
 
 $(document).ready(function () {
   $('#new_tweet_form').on('submit', handleSubmit);
+  loadTweets();
 });
