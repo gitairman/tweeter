@@ -5,18 +5,22 @@
  */
 
 const createTweetElement = (tweetData) => {
-  const { user, content, created_at } = tweetData;
+  const {
+    user: { name, avatars, handle },
+    content: { text },
+    created_at,
+  } = tweetData;
   return `
       <article class="tweet">
         <header>
           <div class="tweet_author">
-            <img src=${user.avatars} alt="${user.name}'s avatar"/>
-            <span>${user.name}</span>
+            <img src=${avatars} alt="${name}'s avatar"/>
+            <span>${name}</span>
           </div>
-          <span class="handle"> ${user.handle} </span>
+          <span class="handle"> ${handle} </span>
         </header>
         <section class="tweet_text">
-          <p>${content.text}</p>
+          <p>${text}</p>
         </section>
         <footer>
           <time>${created_at}</time>
@@ -33,6 +37,25 @@ const createTweetElement = (tweetData) => {
 const renderTweets = (tweets) => {
   tweets.forEach((tweet) => {
     $('#tweets-container').prepend(createTweetElement(tweet));
+  });
+};
+
+const handlePost = function (data) {
+  console.log(data);
+};
+
+const handleSubmit = function (e) {
+  e.preventDefault();
+  console.log(e);
+  console.log($(this).serialize());
+  const data = $(this).serialize();
+  $.ajax({
+    method: 'POST',
+    url: '/tweets',
+    data,
+  }).done(function (res) {
+    console.log(res);
+    renderTweets([res]);
   });
 };
 
@@ -63,5 +86,6 @@ const data = [
 ];
 
 $(document).ready(function () {
+  $('#new_tweet_form').on('submit', handleSubmit);
   renderTweets(data);
 });
