@@ -52,22 +52,29 @@ const loadTweets = function () {
       renderTweets(res);
     })
     .fail((err) => console.log(err));
+  $(document).find('textarea').focus();
 };
 
 const isTweetValid = function (form) {
   const inputText = $(form).find('textarea').val().trim();
-  if (!inputText) return 'Please type some text';
+  if (!inputText) return 'Please type some text!';
   const charLeft = $(form).find('.counter').val();
   if (charLeft < 0)
     return `Message is currently ${Math.abs(
       charLeft
-    )} characters over the limit`;
+    )} characters over the limit!`;
 };
 
 const handleSubmit = function (e) {
   e.preventDefault();
   const tweetInvalid = isTweetValid(this);
-  if (tweetInvalid) return alert(tweetInvalid);
+  const errorDiv = $('.new_tweet_error');
+  if (tweetInvalid) {
+    errorDiv.find('p').text(tweetInvalid);
+    errorDiv.removeClass('hidden');
+    $(this).find('textarea').focus();
+    return;
+  }
 
   const data = $(this).serialize();
 
@@ -77,10 +84,11 @@ const handleSubmit = function (e) {
     data,
   })
     .done(function () {
-      $('#tweets-container').empty();
-      loadTweets();
       e.target.reset();
       $(e.target).find('.counter').val(140);
+      errorDiv.addClass('hidden');
+      $('#tweets-container').empty();
+      loadTweets();
     })
     .fail((err) => console.log(err));
 };

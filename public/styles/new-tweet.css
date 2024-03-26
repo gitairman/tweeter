@@ -33,3 +33,24 @@ footer {
 .char-limit {
   color: red;
 }
+
+.new_tweet_error {
+  color: red;
+  border: solid red 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+.new_tweet_error i {
+  margin: 0 1em;
+}
+
+.new_tweet_error p {
+  margin: 0.5em;
+}
