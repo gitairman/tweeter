@@ -70,7 +70,7 @@ const handleSubmit = function (e) {
     url: '/tweets',
     data,
   })
-    .done(function (res) {
+    .done(function () {
       $('#tweets-container').empty();
       loadTweets();
       e.target.reset();
