@@ -43,19 +43,12 @@ const renderTweets = (tweets) => {
 const loadTweets = function () {
   $.ajax({ method: 'GET', url: '/tweets' })
     .done(function (res) {
-      console.log(res);
       renderTweets(res);
     })
     .fail((err) => console.log(err));
 };
 
-const handlePost = function (data) {
-  console.log(data);
-};
-
 const isTweetValid = function (form) {
-  console.log(form);
-
   const inputText = $(form).find('textarea').val().trim();
   if (!inputText) return 'Please type some text';
   const charLeft = $(form).find('.counter').val();
@@ -78,8 +71,9 @@ const handleSubmit = function (e) {
     data,
   })
     .done(function (res) {
-      console.log(res);
       renderTweets([res]);
+      e.target.reset();
+      $(e.target).find('.counter').val(140);
     })
     .fail((err) => console.log(err));
 };
