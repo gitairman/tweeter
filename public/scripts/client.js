@@ -53,19 +53,24 @@ const handlePost = function (data) {
   console.log(data);
 };
 
+const isTweetValid = function (form) {
+  console.log(form);
+
+  const inputText = $(form).find('textarea').val().trim();
+  if (!inputText) return 'Please type some text';
+  const charLeft = $(form).find('.counter').val();
+  if (charLeft < 0)
+    return `Message is currently ${Math.abs(
+      charLeft
+    )} characters over the limit`;
+};
+
 const handleSubmit = function (e) {
   e.preventDefault();
+  const tweetInvalid = isTweetValid(this);
+  if (tweetInvalid) return alert(tweetInvalid);
 
   const data = $(this).serialize();
-  if (!data.slice(5)) return alert('Please type some text');
-  const charLeft = $(this).find('.counter').val();
-
-  if (charLeft < 0)
-    return alert(
-      `Message is currently ${
-        Math.abs(charLeft) + 140
-      } characters, but must be less than 140.`
-    );
 
   $.ajax({
     method: 'POST',
