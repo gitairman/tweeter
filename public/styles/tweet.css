@@ -1,20 +1,14 @@
+article {
+  margin-bottom: 1em;
+}
+article:hover {
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.4);
+}
+
 .tweet {
   border: solid black 2px;
   padding: 0.5em 0.5em;
 }
-
-article:hover {
-  box-shadow: 7px 7px 7px rgb(0 0 0 / 40%);
-}
-
-article {
-  margin-bottom: 1em;
-}
-
-.tweet_text {
-  padding: 0.8em 0.8em 0 0.8em;
-}
-
 .tweet header {
   height: unset;
   display: flex;
@@ -23,19 +17,6 @@ article {
   padding-left: 0.8em;
   padding-right: 0.8em;
 }
-
-.tweet_author {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 0.5em;
-}
-
-.tweet_author img,
-i {
-  margin-right: 1em;
-}
-
 .tweet footer {
   font-family: unset;
   padding-left: 0.8em;
@@ -43,24 +24,40 @@ i {
   font-size: 0.75em;
 }
 
+.tweet_text {
+  padding: 0.8em 0.8em 0 0.8em;
+}
+.tweet_text p {
+  overflow-wrap: break-word;
+}
+
+.tweet_author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5em;
+}
+.tweet_author img {
+  margin-right: 1em;
+}
+
+i {
+  margin-right: 1em;
+}
+
 .icons {
   display: flex;
   justify-content: space-between;
   color: #4056a1;
 }
-
 .icons i {
   margin: 0.3em;
 }
-
 .icons i:hover {
+  cursor: pointer;
   color: goldenrod;
 }
 
 .handle {
-  opacity: 0.3;
-}
-
-.tweet_text p {
-  overflow-wrap: break-word;
+  opacity: 0.4;
 }

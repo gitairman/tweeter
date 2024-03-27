@@ -14,10 +14,11 @@
 form {
   display: inherit;
   flex-direction: inherit;
-}
-form button {
-  background-color: #4056a1;
-  color: #ffffff;
+
+  button {
+    background-color: #4056a1;
+    color: #ffffff;
+  }
 }
 
 footer {
@@ -25,7 +26,7 @@ footer {
   justify-content: space-between;
   border-top: solid black 2px;
   padding: 0.5em 0;
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
 }
 
 .char-limit {
@@ -39,12 +40,14 @@ footer {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1em;
-}
-.new_tweet_error i {
-  margin: 0 1em;
-}
-.new_tweet_error p {
-  margin: 0.5em;
+
+  i {
+    margin: 0 1em;
+  }
+
+  p {
+    margin: 0.5em;
+  }
 }
 
 .hidden {
