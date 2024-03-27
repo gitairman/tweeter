@@ -60,3 +60,7 @@ i {
 .handle {
   opacity: 0.3;
 }
+
+.tweet_text p {
+  overflow-wrap: break-word;
+}

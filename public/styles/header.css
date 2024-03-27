@@ -1,7 +1,9 @@
 header {
   height: 520px;
-  width: 100%;
   display: flex;
+  width: 100%;
+  min-width: 400px;
+  max-width: 650px;
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
@@ -15,4 +17,12 @@ header div {
 
 header h2 {
   margin: 0 0 1em 0;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    width: 100%;
+    max-width: 100%;
+    min-width: 400px;
+  }
 }

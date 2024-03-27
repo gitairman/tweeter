@@ -21,6 +21,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
+  display: flex;
 }
 
 /*
@@ -29,7 +30,17 @@ body {
 
 main {
   /* border: solid black 1px; */
-  width: 90%;
+  min-width: 600px;
   margin: auto;
   background-color: inherit;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  main {
+    width: 90%;
+    min-width: 400px;
+  }
 }

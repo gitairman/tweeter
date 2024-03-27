@@ -101,3 +101,11 @@ nav i {
 #to_top_btn .hidden {
   display: none;
 }
+
+@media only screen and (max-width: 768px) {
+  nav {
+    width: 100%;
+    max-width: 100%;
+    min-width: 400px;
+  }
+}

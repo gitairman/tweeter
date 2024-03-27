@@ -106,7 +106,8 @@ const handleNewClick = function (e) {
 const scrollFunc = () => {
   if ($(window).scrollTop() > 400) {
     $('#new_tweet').addClass('hidden');
-    return $('#to_top_btn').removeClass('hidden');
+    $('#to_top_btn').removeClass('hidden');
+    return;
   }
   $('#new_tweet').removeClass('hidden');
   $('#to_top_btn').addClass('hidden');
