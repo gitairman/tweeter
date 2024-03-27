@@ -4,19 +4,15 @@ nav {
   color: #ffffff;
   padding: 0 1.5em;
   width: 100%;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
 }
-nav i {
-  color: red;
-  margin-top: 0.5em;
-}
 
 #logo {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
 }
 
 #new_tweet {
@@ -26,25 +22,34 @@ nav i {
   justify-content: center;
   align-items: center;
 }
+
 #new_tweet.hidden {
   display: none;
 }
+
 #new_tweet:active {
   color: red;
 }
+
 #new_tweet:hover {
   animation: 0.7s linear 0.1s infinite alternate new-tweet-text;
   cursor: pointer;
 }
+
 #new_tweet i {
   animation: 0.5s linear 0.1s infinite alternate new-tweet-arrow-up;
 }
+
 #new_tweet .down {
   animation: 0.5s linear 0.1s infinite alternate new-tweet-arrow-down;
 }
-
 .down {
   transform: rotate(180deg);
+}
+
+nav i {
+  color: red;
+  margin-top: 0.5em;
 }
 
 @keyframes new-tweet-arrow-down {
@@ -63,6 +68,7 @@ nav i {
     transform: translateY(20px);
   }
 }
+
 @keyframes new-tweet-text {
   from {
     transform: scale(1);
@@ -71,6 +77,7 @@ nav i {
     transform: scale(1.1);
   }
 }
+
 #to_top_btn {
   position: fixed;
   bottom: 10px;
@@ -81,13 +88,16 @@ nav i {
   background-color: #4056a1;
   cursor: pointer;
 }
+
 #to_top_btn:hover {
   color: red;
 }
+
 #to_top_btn i {
   margin-left: 1em;
   transform: scale(1.5);
 }
+
 #to_top_btn .hidden {
   display: none;
 }
@@ -99,5 +109,3 @@ nav i {
     min-width: 400px;
   }
 }
-
-/*# sourceMappingURL=nav.css.map */

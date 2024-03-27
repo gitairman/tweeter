@@ -9,9 +9,12 @@ header {
   justify-content: flex-end;
   background-image: url(../images/foggy-birds.png);
 }
+
 header div {
+  /* border: solid black 1px; */
   display: flex;
 }
+
 header h2 {
   margin: 0 0 1em 0;
 }
@@ -23,5 +26,3 @@ header h2 {
     min-width: 400px;
   }
 }
-
-/*# sourceMappingURL=header.css.map */

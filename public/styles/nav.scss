@@ -4,19 +4,20 @@ nav {
   color: #ffffff;
   padding: 0 1.5em;
   width: 100%;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-}
-nav i {
-  color: red;
-  margin-top: 0.5em;
+
+  i {
+    color: red;
+    margin-top: 0.5em;
+  }
 }
 
 #logo {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
 }
 
 #new_tweet {
@@ -25,22 +26,27 @@ nav i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-#new_tweet.hidden {
-  display: none;
-}
-#new_tweet:active {
-  color: red;
-}
-#new_tweet:hover {
-  animation: 0.7s linear 0.1s infinite alternate new-tweet-text;
-  cursor: pointer;
-}
-#new_tweet i {
-  animation: 0.5s linear 0.1s infinite alternate new-tweet-arrow-up;
-}
-#new_tweet .down {
-  animation: 0.5s linear 0.1s infinite alternate new-tweet-arrow-down;
+
+  &.hidden {
+    display: none;
+  }
+
+  &:active {
+    color: red;
+  }
+
+  &:hover {
+    animation: 0.7s linear 0.1s infinite alternate new-tweet-text;
+    cursor: pointer;
+  }
+
+  i {
+    animation: 0.5s linear 0.1s infinite alternate new-tweet-arrow-up;
+  }
+
+  .down {
+    animation: 0.5s linear 0.1s infinite alternate new-tweet-arrow-down;
+  }
 }
 
 .down {
@@ -51,26 +57,32 @@ nav i {
   from {
     transform: rotate(180deg) translateY(0);
   }
+
   to {
     transform: rotate(180deg) translateY(-20px);
   }
 }
+
 @keyframes new-tweet-arrow-up {
   from {
     transform: translateY(0);
   }
+
   to {
     transform: translateY(20px);
   }
 }
+
 @keyframes new-tweet-text {
   from {
     transform: scale(1);
   }
+
   to {
     transform: scale(1.1);
   }
 }
+
 #to_top_btn {
   position: fixed;
   bottom: 10px;
@@ -80,16 +92,19 @@ nav i {
   color: white;
   background-color: #4056a1;
   cursor: pointer;
-}
-#to_top_btn:hover {
-  color: red;
-}
-#to_top_btn i {
-  margin-left: 1em;
-  transform: scale(1.5);
-}
-#to_top_btn .hidden {
-  display: none;
+
+  &:hover {
+    color: red;
+  }
+
+  i {
+    margin-left: 1em;
+    transform: scale(1.5);
+  }
+
+  .hidden {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -99,5 +114,3 @@ nav i {
     min-width: 400px;
   }
 }
-
-/*# sourceMappingURL=nav.css.map */

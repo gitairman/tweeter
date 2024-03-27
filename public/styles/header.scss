@@ -8,12 +8,14 @@ header {
   flex-direction: column;
   justify-content: flex-end;
   background-image: url(../images/foggy-birds.png);
-}
-header div {
-  display: flex;
-}
-header h2 {
-  margin: 0 0 1em 0;
+
+  div {
+    display: flex;
+  }
+
+  h2 {
+    margin: 0 0 1em 0;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -23,5 +25,3 @@ header h2 {
     min-width: 400px;
   }
 }
-
-/*# sourceMappingURL=header.css.map */
