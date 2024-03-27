@@ -1,12 +1,12 @@
+@use 'vars';
+
 header {
+  @include vars.flexSpecs($justifyContent: flex-end, $dir: column);
   height: 520px;
   display: flex;
   width: 100%;
   min-width: 400px;
   max-width: 650px;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
   background-image: url(../images/foggy-birds.png);
 
   div {

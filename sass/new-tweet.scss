@@ -1,12 +1,12 @@
+@use 'vars';
+
 #tweet-text {
   border: none;
   background-color: inherit;
 }
 
 .new-tweet {
-  display: flex;
-  flex-direction: column;
-  align-content: flex-end;
+  @include vars.flexSpecs($dir: column, $align: unset);
   padding: 0.5em 0.5em;
   margin-bottom: 1em;
 }
@@ -16,17 +16,16 @@ form {
   flex-direction: inherit;
 
   button {
-    background-color: #4056a1;
+    background-color: vars.$nav-bg-colour;
     color: #ffffff;
   }
 }
 
 footer {
-  display: flex;
-  justify-content: space-between;
+  @include vars.flexSpecs;
   border-top: solid black 2px;
   padding: 0.5em 0;
-  font-family: 'Bungee', sans-serif;
+  font-family: vars.$logo-font;
 }
 
 .char-limit {
@@ -34,11 +33,9 @@ footer {
 }
 
 .new_tweet_error {
+  @include vars.flexSpecs;
   color: red;
   border: solid red 2px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-bottom: 1em;
 
   i {

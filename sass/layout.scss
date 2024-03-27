@@ -1,3 +1,5 @@
+@use 'vars';
+
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -23,9 +25,9 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: vars.$body-bg-colour;
   font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: vars.$reg-font;
   display: flex;
 }
 

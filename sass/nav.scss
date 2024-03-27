@@ -1,13 +1,13 @@
+@use 'vars';
+
 nav {
+  @include vars.flexSpecs;
   height: 120px;
-  background-color: #4056a1;
+  background-color: vars.$nav-bg-colour;
   color: #ffffff;
   padding: 0 1.5em;
   width: 100%;
-  font-family: 'Source Sans 3', sans-serif;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-family: vars.$reg-font;
   position: fixed;
 
   i {
@@ -17,16 +17,13 @@ nav {
 }
 
 #logo {
-  font-family: 'Bungee', sans-serif;
+  font-family: vars.$logo-font;
 }
 
 #new_tweet {
-  display: flex;
-  font-size: 0.8em;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include vars.flexSpecs($justifyContent: center, $dir: column);
 
+  font-size: 0.8em;
   &.hidden {
     display: none;
   }
@@ -90,7 +87,7 @@ nav {
   border-radius: 50%;
   height: 3em;
   color: white;
-  background-color: #4056a1;
+  background-color: vars.$nav-bg-colour;
   cursor: pointer;
 
   &:hover {

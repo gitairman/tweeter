@@ -5,8 +5,9 @@
 
 .new-tweet {
   display: flex;
+  align-items: unset;
+  justify-content: space-between;
   flex-direction: column;
-  align-content: flex-end;
   padding: 0.5em 0.5em;
   margin-bottom: 1em;
 }
@@ -22,7 +23,9 @@ form button {
 
 footer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  flex-direction: row;
   border-top: solid black 2px;
   padding: 0.5em 0;
   font-family: "Bungee", sans-serif;
@@ -33,11 +36,12 @@ footer {
 }
 
 .new_tweet_error {
-  color: red;
-  border: solid red 2px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
+  color: red;
+  border: solid red 2px;
   margin-bottom: 1em;
 }
 .new_tweet_error i {

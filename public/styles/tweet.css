@@ -10,10 +10,11 @@ article:hover {
   padding: 0.5em 0.5em;
 }
 .tweet header {
-  height: unset;
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  flex-direction: row;
+  height: unset;
   padding-left: 0.8em;
   padding-right: 0.8em;
 }
@@ -33,8 +34,9 @@ article:hover {
 
 .tweet_author {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
   margin-top: 0.5em;
 }
 .tweet_author img {
@@ -47,7 +49,9 @@ i {
 
 .icons {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  flex-direction: row;
   color: #4056a1;
 }
 .icons i {

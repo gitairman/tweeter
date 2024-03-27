@@ -1,12 +1,13 @@
 header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
   height: 520px;
   display: flex;
   width: 100%;
   min-width: 400px;
   max-width: 650px;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
   background-image: url(../images/foggy-birds.png);
 }
 header div {
@@ -23,5 +24,3 @@ header h2 {
     min-width: 400px;
   }
 }
-
-/*# sourceMappingURL=header.css.map */

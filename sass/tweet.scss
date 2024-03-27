@@ -1,3 +1,5 @@
+@use 'vars';
+
 article {
   &:hover {
     box-shadow: 7px 7px 7px rgb(0 0 0 / 40%);
@@ -11,10 +13,8 @@ article {
   padding: 0.5em 0.5em;
 
   header {
+    @include vars.flexSpecs;
     height: unset;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     padding-left: 0.8em;
     padding-right: 0.8em;
   }
@@ -36,9 +36,7 @@ article {
 }
 
 .tweet_author {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include vars.flexSpecs;
   margin-top: 0.5em;
 
   img {
@@ -51,9 +49,8 @@ i {
 }
 
 .icons {
-  display: flex;
-  justify-content: space-between;
-  color: #4056a1;
+  @include vars.flexSpecs;
+  color: vars.$nav-bg-colour;
 
   i {
     margin: 0.3em;
