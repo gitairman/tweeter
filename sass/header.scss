@@ -1,6 +1,6 @@
 @use 'vars';
 
-header {
+#user-profile {
   @include vars.flexSpecs($justifyContent: flex-end, $dir: column);
   height: 520px;
   display: flex;

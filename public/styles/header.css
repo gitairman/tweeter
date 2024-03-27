@@ -1,4 +1,4 @@
-header {
+#user-profile {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -10,13 +10,13 @@ header {
   max-width: 650px;
   background-image: url(../images/foggy-birds.png);
 }
-header div {
+#user-profile div {
   display: flex;
 }
-header h2 {
+#user-profile h2 {
   margin: 0 0 1em 0;
 }
-header img {
+#user-profile img {
   width: 50%;
   margin: auto;
   opacity: 50%;
