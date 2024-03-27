@@ -4,13 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// function to make text input to new tweet safe from cross-site scripting attacks
 const xssSafe = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+// createTweetElement takes in an object containing tweet data
+// and returns a template literal containing html elements using
+// the relevent variables contained in the tweet data
 const createTweetElement = (tweetData) => {
+  //destructure tweetData to make template more concise
   const {
     user: { name, avatars, handle },
     content: { text },
@@ -40,12 +45,17 @@ const createTweetElement = (tweetData) => {
 `;
 };
 
+// renderTweets takes in an array of tweet objects and
+// passes each item in the array to the createTweetElement functions
+// and finally prepends the resulting element to the tweets-container
 const renderTweets = (tweets) => {
   tweets.forEach((tweet) => {
     $('#tweets-container').prepend(createTweetElement(tweet));
   });
 };
 
+// loadTweets makes an ajax request to the /tweets path
+// to fetch tweets from the server
 const loadTweets = function () {
   $.ajax({ method: 'GET', url: '/tweets' })
     .done(function (res) {
@@ -55,6 +65,10 @@ const loadTweets = function () {
   $(document).find('textarea').focus();
 };
 
+// isTweetValid takes in the new tweet form node
+// and checks to makes ure that the textarea field is not empty
+// as well as checks the char counter to make sure input is not
+// more than 140 characters.  Return is either a string or null.
 const isTweetValid = function (form) {
   const inputText = $(form).find('textarea').val().trim();
   if (!inputText) return 'Please type some text!';
@@ -63,8 +77,14 @@ const isTweetValid = function (form) {
     return `Message is currently ${Math.abs(
       charLeft
     )} characters over the limit!`;
+
+  return null;
 };
 
+// handleSubmit checks if tweet is valid before making a post
+// request using jQuery ajax method.  When post is successfull
+// form is reset, counter is reset, tweet container is emptied,
+// and tweets are reloaded from server.
 const handleSubmit = function (e) {
   e.preventDefault();
   const tweetInvalid = isTweetValid(this);
@@ -93,6 +113,9 @@ const handleSubmit = function (e) {
     .fail((err) => console.log(err));
 };
 
+// handleNewClick checks if the new tweet form is hidden
+// and if it is not it slides it down, otherwise it slides
+// it up.
 const handleNewClick = function (e) {
   const formHidden = $('.new-tweet').is(':hidden');
   if (formHidden)
@@ -103,6 +126,10 @@ const handleNewClick = function (e) {
   $('.new-tweet').slideUp(800, () => $(this).find('i').removeClass('down'));
 };
 
+// scrollFunc checks if window has been scrolled 400 pixels down
+// and if so hides the new tweet button and unhides the scroll to top
+// button, otherwise it unhides the new tweet button and hides the
+// scroll to top button
 const scrollFunc = () => {
   if ($(window).scrollTop() > 400) {
     $('#new_tweet').addClass('hidden');
@@ -113,8 +140,11 @@ const scrollFunc = () => {
   $('#to_top_btn').addClass('hidden');
 };
 
+// toTopFunc animates the transition of going back to the top
+// and then focusses the textarea in case the user wants to write a new tweet
 const toTopFunc = () => {
   $('html, body').animate({ scrollTop: '0' }, 1000);
+  $('textarea').focus();
 };
 
 $(document).ready(function () {

@@ -43,6 +43,8 @@ footer {
   color: red;
   border: solid red 2px;
   margin-bottom: 1em;
+  background-color: lightpink;
+  border-radius: 5px;
 }
 .new_tweet_error i {
   margin: 0 1em;
