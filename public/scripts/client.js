@@ -103,8 +103,24 @@ const handleNewClick = function (e) {
   $('.new-tweet').slideUp(800, () => $(this).find('i').removeClass('down'));
 };
 
+const scrollFunc = () => {
+  if ($(window).scrollTop() > 400) {
+    $('#new_tweet').addClass('hidden');
+    return $('#to_top_btn').removeClass('hidden');
+  }
+  $('#new_tweet').removeClass('hidden');
+  $('#to_top_btn').addClass('hidden');
+};
+
+const toTopFunc = () => {
+  $('html, body').animate({ scrollTop: '0' }, 1000);
+};
+
 $(document).ready(function () {
-  $('#new_tweet_form').on('submit', handleSubmit);
   loadTweets();
+
+  $('#new_tweet_form').on('submit', handleSubmit);
   $('#new_tweet').on('click', handleNewClick);
+  $(window).on('scroll', scrollFunc);
+  $('#to_top_btn').on('click', toTopFunc);
 });

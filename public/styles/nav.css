@@ -23,6 +23,10 @@ nav {
   align-items: center;
 }
 
+#new_tweet.hidden {
+  display: none;
+}
+
 #new_tweet:active {
   color: red;
 }
@@ -32,11 +36,11 @@ nav {
   cursor: pointer;
 }
 
-#new_tweet:hover i {
+#new_tweet i {
   animation: 0.5s linear 0.1s infinite alternate new-tweet-arrow-up;
 }
 
-#new_tweet:hover .down {
+#new_tweet .down {
   animation: 0.5s linear 0.1s infinite alternate new-tweet-arrow-down;
 }
 .down {
@@ -72,4 +76,28 @@ nav i {
   to {
     transform: scale(1.1);
   }
+}
+
+#to_top_btn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+  height: 3em;
+  color: white;
+  background-color: #4056a1;
+  cursor: pointer;
+}
+
+#to_top_btn:hover {
+  color: red;
+}
+
+#to_top_btn i {
+  margin-left: 1em;
+  transform: scale(1.5);
+}
+
+#to_top_btn .hidden {
+  display: none;
 }

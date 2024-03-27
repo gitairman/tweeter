@@ -12,3 +12,7 @@ header div {
   /* border: solid black 1px; */
   display: flex;
 }
+
+header h2 {
+  margin: 0 0 1em 0;
+}
