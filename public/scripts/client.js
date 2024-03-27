@@ -93,7 +93,18 @@ const handleSubmit = function (e) {
     .fail((err) => console.log(err));
 };
 
+const handleNewClick = function (e) {
+  const formHidden = $('.new-tweet').is(':hidden');
+  if (formHidden)
+    return $('.new-tweet').slideDown(800, () => {
+      $(this).find('i').addClass('down');
+      $('textarea').focus();
+    });
+  $('.new-tweet').slideUp(800, () => $(this).find('i').removeClass('down'));
+};
+
 $(document).ready(function () {
   $('#new_tweet_form').on('submit', handleSubmit);
   loadTweets();
+  $('#new_tweet').on('click', handleNewClick);
 });

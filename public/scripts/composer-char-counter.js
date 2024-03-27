@@ -1,4 +1,8 @@
 const handleInput = function () {
+  const errorDiv = $(this).parent().siblings('.new_tweet_error');
+  const errorClear = errorDiv.hasClass('hidden');
+  if (!errorClear) errorDiv.addClass('hidden');
+
   const charLen = $(this).val().length;
   const charLeft = 140 - charLen;
   const counter = $(this).siblings().find('.counter');
