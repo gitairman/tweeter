@@ -16,6 +16,11 @@ header div {
 header h2 {
   margin: 0 0 1em 0;
 }
+header img {
+  width: 50%;
+  margin: auto;
+  opacity: 50%;
+}
 
 @media only screen and (max-width: 768px) {
   header {
