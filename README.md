@@ -21,8 +21,8 @@ This project demonstrates HTML, CSS, JS, jQuery and AJAX front-end skills, as we
 
 ## Functional Requirements
 
--   A client-side Single Page App (SPA)
--   Communicates with a server via AJAX
+-   A client-side Single Page App (SPA) -----	DONE 
+-   Communicates with a server via AJAX -----	DONE 
 
 ### Display Requirements
 
