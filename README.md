@@ -19,6 +19,11 @@ This project demonstrates HTML, CSS, JS, jQuery and AJAX front-end skills, as we
 - chance 1.0.2
 - md5 2.1.0
 
+## Final Product
+
+![desktop width](/screenshots/desktop.png?raw=true "Optional Title")
+![smartphone width](/screenshots/smartphone.png?raw=true "Optional Title")
+
 ## Functional Requirements
 
 -   A client-side Single Page App (SPA) -----	DONE 
