@@ -49,20 +49,21 @@ const createTweetElement = (tweetData) => {
 // passes each item in the array to the createTweetElement functions
 // and finally prepends the resulting element to the tweets-container
 const renderTweets = (tweets) => {
+  const $container = $('#tweets-container');
   tweets.forEach((tweet) => {
-    $('#tweets-container').prepend(createTweetElement(tweet));
+    $container.prepend(createTweetElement(tweet));
   });
 };
 
 // loadTweets makes an ajax request to the /tweets path
 // to fetch tweets from the server
 const loadTweets = function () {
-  $.ajax({ method: 'GET', url: '/tweets' })
+  $.get('/tweets')
     .done(function (res) {
       renderTweets(res);
     })
     .fail((err) => console.log(err));
-  $(document).find('textarea').focus();
+  $('textarea').focus();
 };
 
 // isTweetValid takes in the new tweet form node
@@ -87,25 +88,23 @@ const isTweetValid = function (form) {
 // and tweets are reloaded from server.
 const handleSubmit = function (e) {
   e.preventDefault();
+  const $form = $(this);
+  const $input = $form.find('textarea');
+  
   const tweetInvalid = isTweetValid(this);
   const errorDiv = $('.new_tweet_error');
   if (tweetInvalid) {
     errorDiv.find('p').text(tweetInvalid);
     errorDiv.removeClass('hidden');
-    $(this).find('textarea').focus();
+    $input.focus();
     return;
   }
 
-  const data = $(this).serialize();
+  const data = $form.serialize();
 
-  $.ajax({
-    method: 'POST',
-    url: '/tweets',
-    data,
-  })
+  $.post('/tweets', data )
     .done(function () {
-      e.target.reset();
-      $(e.target).find('.counter').val(140);
+      $input.val('').trigger('input');
       errorDiv.addClass('hidden');
       $('#tweets-container').empty();
       loadTweets();
@@ -117,13 +116,15 @@ const handleSubmit = function (e) {
 // and if it is not it slides it down, otherwise it slides
 // it up.
 const handleNewClick = function (e) {
+  const $newTweetBtn = $(this);
+  const $arrowGraphic = $newTweetBtn.find('i');
   const formHidden = $('.new-tweet').is(':hidden');
   if (formHidden)
     return $('.new-tweet').slideDown(800, () => {
-      $(this).find('i').addClass('down');
+      $arrowGraphic.addClass('down');
       $('textarea').focus();
     });
-  $('.new-tweet').slideUp(800, () => $(this).find('i').removeClass('down'));
+  $('.new-tweet').slideUp(800, () => $arrowGraphic.removeClass('down'));
 };
 
 // scrollFunc checks if window has been scrolled 400 pixels down
